@@ -35,10 +35,10 @@ This blog allows offline access.
 ![Local Data Base](https://i.pinimg.com/originals/8a/81/bf/8a81bf5b42a81d060d969171c0cb639a.png)
 
 ## Layout
-![Albums](https://i.pinimg.com/originals/af/bc/07/afbc071f523120a853a69f80a5d2c001.jpg)
-![Posts](https://i.pinimg.com/originals/4b/a8/a2/4ba8a25be6cce3166ee4a879b243465c.jpg)
-![Post wihout comment](https://i.pinimg.com/originals/3a/ac/b8/3aacb8368cff6c4cac4e300e194118bf.jpg)
-![Post with comment](https://i.pinimg.com/originals/d1/32/71/d1327121b67f6a841b8256809b1d9639.jpg)
+<img src="https://i.pinimg.com/originals/af/bc/07/afbc071f523120a853a69f80a5d2c001.jpg" width="300">
+<img src="https://i.pinimg.com/originals/4b/a8/a2/4ba8a25be6cce3166ee4a879b243465c.jpg" width="300">
+<img src="https://i.pinimg.com/originals/3a/ac/b8/3aacb8368cff6c4cac4e300e194118bf.jpg" width="300">
+<img src="https://i.pinimg.com/originals/d1/32/71/d1327121b67f6a841b8256809b1d9639.jpg" width="300">
 
 ## About
 This project was  developed by Jessica S. Campos
