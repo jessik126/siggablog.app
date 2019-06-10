@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiggaBlog.UI.View.PostPage"
+             Title="Blog Sigga">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icondownloading.png" Name="Update" Priority="0" Command="{Binding UpdateCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout BackgroundColor="LightBlue" HorizontalOptions="FillAndExpand" Padding="10">
+                <Image HeightRequest="50" WidthRequest="50" Source="{Binding AlbumVM.Photo}"/>
+                <Label Text="{Binding AlbumVM.Title, StringFormat='Album: {0}'}" 
+                       TextColor="White" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+                <Label Text="Posts" TextColor="White" HorizontalOptions="Center" FontSize="Large"/>
+            </StackLayout>
+
+            <StackLayout Padding="10">
+
+                <ListView ItemsSource="{Binding PostsVM}"
+                      SelectedItem="{Binding PostVM}"
+                      HasUnevenRows="True">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" Spacing="5">
+                                    <Label Text="{Binding Title, StringFormat=' • Title: {0}'}" FontSize="Medium" FontAttributes="Italic"/>
+                                    <Label Text="{Binding ShortBody}" FontSize="Small" Margin="50,10,0,10"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

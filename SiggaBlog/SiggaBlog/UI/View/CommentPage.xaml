@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiggaBlog.UI.View.CommentPage"
+             Title="Blog Sigga">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icondownloading.png" Name="Update" Priority="0" Command="{Binding UpdateCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout BackgroundColor="LightBlue" HorizontalOptions="FillAndExpand" Padding="10">
+                <Label Text="{Binding PostVM.AlbumTitle, StringFormat='Album: {0}'}" 
+                       TextColor="White" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+                <Label Text="Post" TextColor="White" HorizontalOptions="Center" FontSize="Large"/>
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                
+                <ListView
+                    ItemsSource="{Binding CommentsVM}"
+                    HasUnevenRows="True">
+
+                    <ListView.Header>
+                        <StackLayout>
+                            <Label Text="{Binding PostVM.Title, StringFormat='Title: {0}'}" 
+                                   FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="20"/>
+                            <Label Text="{Binding PostVM.Body}" FontSize="Small"/>
+                        </StackLayout>
+                    </ListView.Header>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" Spacing="5" Padding="20">
+                                    <Label Text=" - Comment:"/>
+                                    <Label Text="{Binding Comment}" Margin="20,0,0,0"/>
+                                    <Label Text="{Binding Name, StringFormat='Name: {0}'}" FontSize="Small" Margin="50,0,0,0"/>
+                                    <Label Text="{Binding Email, StringFormat='Email: {0}'}" FontSize="Small" Margin="50,0,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

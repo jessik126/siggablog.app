@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiggaBlog.UI.View.AlbumPage"
+             Title="Blog Sigga">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icondownloading.png" Name="Update" Priority="0" Command="{Binding UpdateCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>        
+        <StackLayout>
+
+            <StackLayout BackgroundColor="LightBlue" HorizontalOptions="FillAndExpand" Padding="10">
+                <Label Text="Albums" TextColor="White" HorizontalOptions="Center" FontSize="Large" />
+            </StackLayout>
+            
+            <ListView ItemsSource="{Binding AlbumsVM}"
+                      SelectedItem="{Binding AlbumVM}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnSpacing="3">
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image HeightRequest="50" WidthRequest="50" Source="{Binding Photo}" Grid.Column="0"/>
+                                
+                                <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="5">
+                                    <Label Text="{Binding Title, StringFormat='Title: {0}'}" FontSize="Medium" FontAttributes="Italic"/>
+                                    <Label Text="{Binding User, StringFormat='User: {0}'}" FontSize="Small" Margin="15,0,0,5"/>
+                                </StackLayout>
+                                
+                            </Grid>  
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
